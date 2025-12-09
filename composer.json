@@ -1,0 +1,25 @@
+{
+    "name": "lirien/env",
+    "description": "A minimal and straightforward .env file loader for PHP",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lirien\\Support\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Cláudio Victor",
+            "email": "barrosclaudio147@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.1"
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist"
+    }
+}
