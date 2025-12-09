@@ -1,9 +1,8 @@
 # Lirien Env
 
-[![Latest Version](https://img.shields.io/packagist/v/lirien/env.svg?style=flat-square)](https://packagist.org/packages/lirien/env)
-[![PHP Version](https://img.shields.io/packagist/php-v/lirien/env.svg?style=flat-square)](https://packagist.org/packages/lirien/env)
-[![Total Downloads](https://img.shields.io/packagist/dt/lirien/env.svg?style=flat-square)](https://packagist.org/packages/lirien/env)
-[![License](https://img.shields.io/github/license/lirien/env.svg?style=flat-square)](LICENSE)
+<img src="https://img.shields.io/badge/PHP-8+-777BB4?logo=php&logoColor=white" />
+  <img src="https://img.shields.io/badge/Status-Active-success" />
+  <img src="https://img.shields.io/badge/License-MIT-green" />
 
 A minimal and straightforward `.env` file loader for PHP 8.1+.
 
@@ -24,7 +23,6 @@ use Lirien\Support\Env;
 Env::load(__DIR__ . '/../.env');
 
 // Retrieve a variable
-
 $appName = Env::get('APP_NAME');
 
 // Set a variable at runtime (e.g. in tests)
@@ -55,6 +53,16 @@ REDIS_HOST=127.0.0.1
 - `Env::set(string $key, string value): void` - Sets or overrides a variable at runtime
 
 > **Note**: `Env::get()` assumes the variable exists. Use a default value or check existence when needed.
+
+## Security & Best Pratices
+
+- Never commit `.env` (already in `.gitignore`)
+- Keep `.env` outside the web root (use absolute path)
+- Always validate/cast values returned by `Env::get()`
+
+- `Env::set()`  is not tests only - do not use in prodution
+
+- Use the provided `.env.example` as tamplete
 
 ## License
 MIT
